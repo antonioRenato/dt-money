@@ -9,12 +9,20 @@
       "createdAt": "2023-03-25T11:25:44.505Z"
     },
     {
-      "id": 1,
+      "id": 2,
       "description": "Hambuguer",
       "type": "outcome",
       "category": "Alimentação",
       "price": 50,
       "createdAt": "2023-03-25T11:21:44.505Z"
+    },
+    {
+      "id": 3,
+      "description": "Ignite RocketSeat",
+      "type": "outcome",
+      "category": "Educação",
+      "price": 1980,
+      "createdAt": "2023-03-25T11:19:44.505Z"
     }
   ]
 }
