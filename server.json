@@ -31,6 +31,14 @@
       "type": "income",
       "createdAt": "2023-03-31T00:49:24.642Z",
       "id": 4
+    },
+    {
+      "description": "One piece",
+      "category": "Manga",
+      "price": 5000,
+      "type": "outcome",
+      "createdAt": "2023-03-31T01:07:56.639Z",
+      "id": 5
     }
   ]
 }

@@ -1,34 +1,38 @@
-import { useContext, useEffect, useState } from 'react';
-import { Header } from "../../components/Header";
-import { Summary } from "../../components/Summary";
-import { TransactionsContext } from '../../contexts/TransactionsContext';
-import { dateFormatter, priceFormatter } from '../../utils/formater';
-import { SearchForm } from "./components/SearchForm";
-import { PriceHighlight, TransactionsContainer, TransactionsTable } from "./styles";
+import { useContext } from 'react'
+import { Header } from '../../components/Header'
+import { Summary } from '../../components/Summary'
+import { TransactionsContext } from '../../contexts/TransactionsContext'
+import { dateFormatter, priceFormatter } from '../../utils/formater'
+import { SearchForm } from './components/SearchForm'
+import {
+  PriceHighlight,
+  TransactionsContainer,
+  TransactionsTable,
+} from './styles'
 
 interface Transaction {
-  id: number;
-  description: string;
-  type: 'income' | 'outcome';
-  price: number;
-  category: string;
-  createdAt: string;
+  id: number
+  description: string
+  type: 'income' | 'outcome'
+  price: number
+  category: string
+  createdAt: string
 }
 
-export function Transactions () {
+export function Transactions() {
   const { transactions } = useContext(TransactionsContext)
 
-  return(
+  return (
     <div>
       <Header />
       <Summary />
 
-     <TransactionsContainer>
+      <TransactionsContainer>
         <SearchForm />
-        <TransactionsTable>         
+        <TransactionsTable>
           <tbody>
-            {transactions.map(transaction => {
-              return(
+            {transactions.map((transaction) => {
+              return (
                 <tr key={transaction.id}>
                   <td width="50%">{transaction.description}</td>
                   <td>
@@ -38,13 +42,15 @@ export function Transactions () {
                     </PriceHighlight>
                   </td>
                   <td>{transaction.category}</td>
-                  <td>{dateFormatter.format(new Date(transaction.createdAt))}</td>
+                  <td>
+                    {dateFormatter.format(new Date(transaction.createdAt))}
+                  </td>
                 </tr>
               )
             })}
           </tbody>
-      </TransactionsTable>
-     </TransactionsContainer>
+        </TransactionsTable>
+      </TransactionsContainer>
     </div>
   )
 }
